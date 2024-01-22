@@ -6,11 +6,11 @@ module.exports = ({ env }) => ({
       settings: {
         client: 'postgres',
         host: env('DATABASE_HOST', 'aws-0-ap-south-1.pooler.supabase.com'),  // Use the domain only
-        port: env.int('DATABASE_PORT', 6543),
+        port: env.int('DATABASE_PORT', 5432),  // Update to the correct port
         database: env('DATABASE_NAME', 'postgres'),
         username: env('DATABASE_USERNAME', 'postgres.jsggjeqxlxabceoqnetg'),
         password: env('DATABASE_PASSWORD', 'mypassword'),
-        ssl: env.bool('DATABASE_SSL', false),
+        ssl: true,  // Set to true if your PostgreSQL database requires SSL
       },
       options: {},
     },
