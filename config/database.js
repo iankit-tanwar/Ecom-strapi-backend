@@ -5,7 +5,11 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        url: env('DATABASE_URL', 'postgres://user:password@localhost:5432/database'), // Replace with your actual URL
+        host: env('DATABASE_HOST', 'localhost'),  // Use the domain only
+        port: env.int('DATABASE_PORT', 6543),
+        database: env('DATABASE_NAME', 'postgres'),
+        username: env('DATABASE_USERNAME', 'postgres.jsggjeqxlxabceoqnetg'),
+        password: env('DATABASE_PASSWORD', 'mypassword'),
         ssl: env.bool('DATABASE_SSL', false),
       },
       options: {},
